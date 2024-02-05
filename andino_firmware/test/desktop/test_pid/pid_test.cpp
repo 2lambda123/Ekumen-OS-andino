@@ -33,15 +33,15 @@
 
 // TODO(jballoffet): Add unit tests.
 TEST(PidTest, ConstructOk) {
-  andino::PID pid_controller(0, 0, 0, 0, 0, 0);
-  EXPECT_EQ(1, 1);
+    andino::PID pid_controller(0, 0, 0, 0, 0, 0);
+    EXPECT_EQ(1, 1);
 }
 
 int main(int argc, char** argv) {
-  ::testing::InitGoogleTest(&argc, argv);
-  if (RUN_ALL_TESTS()) {
-  }
+    ::testing::InitGoogleTest(&argc, argv);
+    if (RUN_ALL_TESTS()) {
+    }
 
-  // Always return zero-code and allow PlatformIO to parse results.
-  return 0;
+    // Always return zero-code and allow PlatformIO to parse results.
+    return 0;
 }

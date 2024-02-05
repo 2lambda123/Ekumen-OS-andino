@@ -35,22 +35,22 @@ namespace andino {
 
 /// @brief This class defines an interface for digital interrupt inputs.
 class InterruptIn : public DigitalIn {
- public:
-  /// @brief Interrupt callback type.
-  typedef void (*InterruptCallback)();
+public:
+    /// @brief Interrupt callback type.
+    typedef void (*InterruptCallback)();
 
-  /// @brief Constructs a InterruptIn using the specified GPIO pin.
-  ///
-  /// @param gpio_pin GPIO pin.
-  explicit InterruptIn(const int gpio_pin) : DigitalIn(gpio_pin) {}
+    /// @brief Constructs a InterruptIn using the specified GPIO pin.
+    ///
+    /// @param gpio_pin GPIO pin.
+    explicit InterruptIn(const int gpio_pin) : DigitalIn(gpio_pin) {}
 
-  /// @brief Destructs the digital interrupt input.
-  virtual ~InterruptIn() = default;
+    /// @brief Destructs the digital interrupt input.
+    virtual ~InterruptIn() = default;
 
-  /// @brief Attaches an interrupt callback.
-  ///
-  /// @param callback Callback function.
-  virtual void attach(InterruptCallback callback) const = 0;
+    /// @brief Attaches an interrupt callback.
+    ///
+    /// @param callback Callback function.
+    virtual void attach(InterruptCallback callback) const = 0;
 };
 
 }  // namespace andino

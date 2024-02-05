@@ -75,47 +75,51 @@ constexpr int8_t Encoder::kTicksDelta[];
 const InterruptIn::InterruptCallback Encoder::kCallbacks[kInstancesMax] = {callback_0, callback_1};
 
 void Encoder::callback_0() {
-  if (Encoder::instances_[0] != nullptr) {
-    Encoder::instances_[0]->callback();
-  }
+    if (Encoder::instances_[0] != nullptr) {
+        Encoder::instances_[0]->callback();
+    }
 }
 
 void Encoder::callback_1() {
-  if (Encoder::instances_[1] != nullptr) {
-    Encoder::instances_[1]->callback();
-  }
+    if (Encoder::instances_[1] != nullptr) {
+        Encoder::instances_[1]->callback();
+    }
 }
 
 Encoder* Encoder::instances_[kInstancesMax] = {nullptr, nullptr};
 int Encoder::instance_count_ = 0;
 
 void Encoder::init() {
-  // The current implementation only supports two instances of this class to be constructed. This
-  // prevents reaching a buffer overflow.
-  if (instance_count_ == kInstancesMax) {
-    return;
-  }
+    // The current implementation only supports two instances of this class to be constructed. This
+    // prevents reaching a buffer overflow.
+    if (instance_count_ == kInstancesMax) {
+        return;
+    }
 
-  channel_a_interrupt_in_.begin();
-  channel_a_interrupt_in_.attach(kCallbacks[instance_count_]);
-  channel_b_interrupt_in_.begin();
-  channel_b_interrupt_in_.attach(kCallbacks[instance_count_]);
+    channel_a_interrupt_in_.begin();
+    channel_a_interrupt_in_.attach(kCallbacks[instance_count_]);
+    channel_b_interrupt_in_.begin();
+    channel_b_interrupt_in_.attach(kCallbacks[instance_count_]);
 
-  instances_[instance_count_] = this;
-  instance_count_++;
+    instances_[instance_count_] = this;
+    instance_count_++;
 }
 
-long Encoder::read() { return count_; }
+long Encoder::read() {
+    return count_;
+}
 
-void Encoder::reset() { count_ = 0L; }
+void Encoder::reset() {
+    count_ = 0L;
+}
 
 void Encoder::callback() {
-  // Read the current channels state into the lowest 2 bits of the encoder state.
-  state_ <<= 2;
-  state_ |= (channel_b_interrupt_in_.read() << 1) | channel_a_interrupt_in_.read();
+    // Read the current channels state into the lowest 2 bits of the encoder state.
+    state_ <<= 2;
+    state_ |= (channel_b_interrupt_in_.read() << 1) | channel_a_interrupt_in_.read();
 
-  // Update the encoder count accordingly.
-  count_ += kTicksDelta[(state_ & 0x0F)];
+    // Update the encoder count accordingly.
+    count_ += kTicksDelta[(state_ & 0x0F)];
 }
 
 }  // namespace andino
