@@ -33,12 +33,8 @@
 
 namespace andino {
 
-void DigitalOutArduino::begin() const {
-    pinMode(gpio_pin_, OUTPUT);
-}
+void DigitalOutArduino::begin() const { pinMode(gpio_pin_, OUTPUT); }
 
-void DigitalOutArduino::write(int value) const {
-    digitalWrite(gpio_pin_, value);
-}
+void DigitalOutArduino::write(int value) const { digitalWrite(gpio_pin_, value); }
 
 }  // namespace andino
