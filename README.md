@@ -1,12 +1,12 @@
 <div align="center">
 
-  ![Logo White](./docs/logo_white.svg#gh-dark-mode-only)
+![Logo White](./docs/logo_white.svg#gh-dark-mode-only)
 
 </div>
 
 <div align="center">
 
-  ![Logo Black](./docs/logo_black.svg#gh-light-mode-only)
+![Logo Black](./docs/logo_black.svg#gh-light-mode-only)
 
 </div>
 
@@ -159,7 +159,6 @@ https://github.com/Ekumen-OS/andino/assets/53065142/29951e74-e604-4a6e-80fc-421c
 
 _Important!: At the moment this package is only working with the simulation. The support for the real robot is forthcoming._
 
-
 ## :selfie: Media
 
 ### RVIZ Visualization
@@ -174,26 +173,24 @@ https://github.com/Ekumen-OS/andino/assets/53065142/283f4afd-0f9a-4d37-b71f-c9d7
 
 https://github.com/Ekumen-OS/andino/assets/53065142/d73f6053-b422-4334-8f62-029a38799e66
 
-
 See [`andino_slam`](./andino_slam/) for more information.
 
 ## :robot: Share your Andino!
 
 Have you built your `Andino` already? Please go to [`Show & Tell`](https://github.com/Ekumen-OS/andino/discussions/categories/show-and-tell) Discussion and share with us your own version of it.
 
-
 ## :star2: Inspirational sources
 
 This section is dedicated to recognizing and expressing gratitude to the open-source repositories that have served as a source of inspiration for this project. We highly recommend exploring these repositories for further inspiration and learning.
 
- * [articubot_one](https://github.com/joshnewans/articubot_one)
- * [diffbot](https://github.com/ros-mobile-robots/diffbot)
- * [noah_hardware](https://github.com/GonzaCerv/noah-hardware)
- * [linorobot](https://github.com/linorobot/linorobot2)
+- [articubot_one](https://github.com/joshnewans/articubot_one)
+- [diffbot](https://github.com/ros-mobile-robots/diffbot)
+- [noah_hardware](https://github.com/GonzaCerv/noah-hardware)
+- [linorobot](https://github.com/linorobot/linorobot2)
 
 ## :raised_hands: Contributing
 
-Issues or PRs are always welcome! Please refer to [CONTRIBUTING](CONTRIBUTING.md) doc. 
+Issues or PRs are always welcome! Please refer to [CONTRIBUTING](CONTRIBUTING.md) doc.
 
 ## Code development
 
